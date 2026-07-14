@@ -1,0 +1,14 @@
+{
+  "name": "clarity-gateway",
+  "version": "1.0.0",
+  "description": "CLARITY Movers — API gateway",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}

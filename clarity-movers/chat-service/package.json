@@ -1,0 +1,13 @@
+{
+  "name": "clarity-chat-service",
+  "version": "1.0.0",
+  "description": "CLARITY Movers — Gemini-backed chat API with local llama.cpp fallback",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

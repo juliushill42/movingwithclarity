@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLARITY Movers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CLARITY Movers</h1>
+    <p class="tagline">When everybody has clarity, everything runs fine.</p>
+  </header>
+
+  <section id="value-props">
+    <div class="value-col">
+      <h2>For homeowners</h2>
+      <p>
+        No AI chatbot loop. No text message you wait a day to hear back on.
+        No five different people quoting the same job. One clear booking,
+        one clear price, a real status you can check any time — and a
+        crew that shows up with the equipment your job actually needs.
+      </p>
+    </div>
+    <div class="value-col">
+      <h2>For movers</h2>
+      <p>
+        Every job comes with a clear assignment before you touch a box:
+        what size truck to bring, how many flights of stairs, where things
+        go, who else is on the job with you. No guessing, no chaos on
+        site — and a payment record you can see and verify yourself.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section id="booking-panel">
+      <h2>Book a Move</h2>
+      <form id="booking-form">
+        <label>Name <input type="text" id="name" required></label>
+        <label>Email <input type="email" id="email" required></label>
+        <label>Phone <input type="tel" id="phone" required></label>
+        <label>Pickup address <input type="text" id="pickup" required></label>
+        <label>Dropoff address <input type="text" id="dropoff" required></label>
+        <label>Date &amp; time <input type="datetime-local" id="scheduled_at" required></label>
+        <label>Home size
+          <select id="size">
+            <option value="studio">Studio</option>
+            <option value="1br">1 Bedroom</option>
+            <option value="2br" selected>2 Bedroom</option>
+            <option value="3br">3 Bedroom</option>
+            <option value="4br_plus">4+ Bedroom</option>
+          </select>
+        </label>
+        <label>Flights of stairs (either end) <input type="number" id="stairs" min="0" value="0"></label>
+        <label>Truck size needed
+          <select id="truck_size">
+            <option value="not_needed">Not needed / using my own</option>
+            <option value="10ft">10ft</option>
+            <option value="15ft">15ft</option>
+            <option value="20ft" selected>20ft</option>
+            <option value="26ft">26ft</option>
+          </select>
+        </label>
+        <label>Anything the crew should know (fragile items, room placement, gate codes)
+          <textarea id="special_instructions" rows="3" placeholder="e.g. boxes go in the garage, dresser goes in the primary bedroom"></textarea>
+        </label>
+        <button type="submit">Book Move</button>
+      </form>
+      <div id="booking-result"></div>
+    </section>
+
+    <section id="status-panel">
+      <h2>Check Job Status</h2>
+      <form id="status-form">
+        <label>Move ID <input type="text" id="status-move-id" placeholder="paste move id"></label>
+        <button type="submit">Check Status</button>
+      </form>
+      <pre id="status-result"></pre>
+    </section>
+  </main>
+
+  <button id="chat-toggle-btn" class="chat-toggle-btn" aria-expanded="false" aria-controls="chat-container">
+    💬 Chat with Us
+  </button>
+
+  <div id="chat-container" class="chat-container hidden">
+    <div class="chat-header">
+      <h3>CLARITY Assistant</h3>
+      <button id="chat-close-btn" class="close-btn" aria-label="Close chat">✖</button>
+    </div>
+    <div id="chat-window" class="chat-window"></div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Ask about booking, pricing, status..." />
+      <button id="chat-send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>

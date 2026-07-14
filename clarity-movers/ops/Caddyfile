@@ -1,0 +1,4 @@
+movingwithclarity.com {
+    reverse_proxy localhost:4000
+    encode gzip
+}
